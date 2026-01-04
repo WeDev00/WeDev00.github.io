@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout
+  title="mit"
+  description="Minimal Implementation of git in C"
+  sideBarActiveItemID="projects"
+>
+  <main class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+
+      <!-- Hero image -->
+      <Image
+        src="/mit.webp"
+        width={300}
+        height={100}
+        format="webp"
+        alt="mit – Minimal git implementation"
+        class="mb-6 rounded-xl shadow-lg"
+      />
+
+      <!-- Title -->
+      <h1 class="my-2 text-4xl font-bold">MIT</h1>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-x-2 gap-y-2 mb-4">
+        <div class="badge badge-secondary">C</div>
+        <div class="badge badge-outline">Git Internals</div>
+        <div class="badge badge-outline">CLI Tool</div>
+      </div>
+
+      <div class="divider my-2"></div>
+
+      <!-- GitHub button -->
+      <div class="mb-8">
+        <a
+          href="https://github.com/wedev00/mit"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  width="20"
+  height="20"
+  fill="currentColor"
+  class="inline-block"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974
+    0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481
+    0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338
+    -.453-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605
+    1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829
+    .091-.645.351-1.085.635-1.335-2.214-.251-4.542-1.107-4.542-4.93
+    0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64
+    0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336
+    9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021
+    .545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675
+    0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846
+    0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479
+    C19.146 20.115 22 16.379 22 11.974
+    22 6.465 17.535 2 12.026 2z"
+  />
+</svg>
+          View Code on GitHub
+        </a>
+      </div>
+
+      <!-- Content -->
+      <p>
+        MIT is a <strong> minimal reimplementation of Git</strong> written entirely
+        in C. The project was created to deeply understand Git internals, including
+        object storage, references, commits, and repository structure.
+      </p>
+
+      <h2>Goals</h2>
+      <ul>
+        <li>Understand how Git works under the hood</li>
+        <li>Implement core Git commands from scratch</li>
+        <li>Practice low-level systems programming in C</li>
+      </ul>
+
+      <h2>Implemented Features</h2>
+      <ul>
+        <li><code>mit init</code> – repository initialization</li>
+        <li><code>mit hash-object</code> – object creation</li>
+        <li><code>mit cat-file</code> – object inspection</li>
+        <li>Basic object storage (blobs, trees, commits)</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <ul>
+        <li>C (C17)</li>
+        <li>POSIX APIs</li>
+        <li>Filesystem-based object storage</li>
+      </ul>
+
+    </article>
+  </main>
+</BaseLayout>

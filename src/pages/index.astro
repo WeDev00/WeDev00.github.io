@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Running on ✨caffeine✨ and undefined behavior</div>
+    <div class="text-5xl font-bold">I'm Marco Sorrentino</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer</div>
+    <div class="py-2">
+      <text class="text-lg">
+        Result-oriented software engineer with <b>3+ years of experience</b> developing and maintaining enterprise services. Proven
+        knowledge of the essential tools corporations use to design, build, and maintain their applications.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://www.linkedin.com/in/marco-sorrentino-23b069193/" target="_blank"> Let's connect!</a>
+      <a href="https://github.com/wedev00" target="_blank" class="btn btn-outline ml-5">
+        My personal projects
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Project I'm working on {"</>"}</div>
+  </div>
+
+<HorizontalCard
+    title="Mit"
+    img="/mit.webp"
+    desc="Command line tool to track changes on a project"
+    url="/projects/mit"
+    target="_self"
+  />
+  <div class="mb-3"></div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My latest projects {"</>"}</div>
+  </div>
+
+  <HorizontalCard
+    title="Pure C Server"
+    img="/pure_C.webp"
+    desc="RESTFul server in pure C"
+    url="/projects/pure-c-server"
+    badge="NEW"
+    target="_self"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Uniswap V2 Sniperbot"
+    img="/sniper.webp"
+    desc="Bot to flash-trade coins on Uniswap V2"
+    url="/projects/uniswap_v2_sniperbot"
+    target="_self"
+  />
+  <div class="divider my-0"></div>
+
+</BaseLayout>
